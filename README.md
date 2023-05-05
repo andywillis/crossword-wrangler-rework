@@ -1,4 +1,8 @@
-# scaffold-react-ts-mono
+# Crossword Wrangler
+
+## About
+
+A small app to display ES crosswords.
 
 ## Licence
 

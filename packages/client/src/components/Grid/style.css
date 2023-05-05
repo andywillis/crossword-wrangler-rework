@@ -1,0 +1,24 @@
+:root {
+  --square-width: 38px;
+  --grid-noOfSquares: 13;
+}
+
+.grid {
+  margin-left: 2em;
+  margin-top: 2em;
+  grid-gap: 0;
+  border: 1px solid black;
+  display: grid;
+  border: 1px solid #343434;
+  grid-template-rows: repeat(var(--grid-noOfSquares), var(--square-width));
+  grid-template-columns: repeat(var(--grid-noOfSquares), var(--square-width));
+  grid-auto-flow: column;
+}
+
+.buttons {
+  width: 100%;
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
