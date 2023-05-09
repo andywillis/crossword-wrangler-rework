@@ -4,6 +4,8 @@
 
 A small app to display ES crosswords reworked from my original[`crossword-wrangler`](https://github.com/andywillis/crossword-wrangler-rework)
 
+[![Crossword screenshot]](https://github.com/andywillis/crossword-wrangler-rework/blob/phase3/documentation/crossword_screenshot.png)
+
 ## Considerations
 
 - Improved mobile experience
