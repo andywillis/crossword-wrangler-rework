@@ -1,5 +1,5 @@
 import { writeFile } from 'fs/promises';
-import { getUriData } from './temp';
+import getUriData from './process';
 
 import rootname from '../../rootname';
 

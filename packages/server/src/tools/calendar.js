@@ -24,7 +24,7 @@ export function getWeekDayCalendar(year) {
       const dayNumber = date.getDay();
 
       if (dayNumber > 0 && dayNumber < 6) {
-        console.log(`${year.toString().slice(2)}${padNumber(m)}${padNumber(d)}`)
+        // console.log(`${year.toString().slice(2)}${padNumber(m)}${padNumber(d)}`);
         arr.push(`${year.toString().slice(2)}${padNumber(m)}${padNumber(d)}`);
       }
 
@@ -34,20 +34,4 @@ export function getWeekDayCalendar(year) {
 
   return arr;
 
-}
-
-export function getUriData(uri, years) {
-  return years.map(year => {
-    const datesPerYear = getWeekDayCalendar(year);
-    return {
-      year,
-      data: datesPerYear.map(date => {
-        return {
-          date,
-          easy: `${uri}easy_${date}.xml`,
-          quick: `${uri}quic_${date}.xml`
-        };
-      })
-    };
-  });
 }
