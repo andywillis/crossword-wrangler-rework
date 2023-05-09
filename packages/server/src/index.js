@@ -5,7 +5,7 @@ import { app, port, server } from './service/express';
 import store from './store';
 import routes from './routes/index';
 
-import crosswordData from '../data/full.json' assert { type: 'json' } ;
+import crosswordData from '../data/full.json' assert { type: 'json' };
 
 const { dispatch } = store;
 
