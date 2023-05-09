@@ -80,6 +80,14 @@ async function fetchAndProcessXML(endpoint, status) {
   }
 }
 
+function toObject(data) {
+  return data.reduce((acc, obj) => {
+    const { date, ...rest } = obj;
+    acc[date] = { ...rest };
+    return acc;
+  }, {});
+}
+
 /**
  * bundleUriData
  *
@@ -90,36 +98,27 @@ async function fetchAndProcessXML(endpoint, status) {
  */
 export async function bundleUriData(uri, years) {
 
-  const data = years.map(async year => {
+  const calendar = years.flatMap(getWeekDayCalendar);
 
-    const datesPerYear = getWeekDayCalendar(year);
+  const promises = calendar.map(date => throttle(async () => {
 
-    const promises = datesPerYear.map(date => throttle(async () => {
-
-      const status = console.draft();
-
-      return {
-        date,
-        easy: {
-          uri: `${uri}easy_${date}.xml`,
-          data: await fetchAndProcessXML(`${uri}easy_${date}.xml`, status)
-        },
-        quick: {
-          uri: `${uri}quic_${date}.xml`,
-          data: await fetchAndProcessXML(`${uri}quic_${date}.xml`, status)
-        }
-      };
-
-    }));
+    const status = console.draft();
 
     return {
-      year,
-      data: await Promise.all(promises)
+      date,
+      easy: {
+        uri: `${uri}easy_${date}.xml`,
+        data: await fetchAndProcessXML(`${uri}easy_${date}.xml`, status)
+      },
+      quick: {
+        uri: `${uri}quic_${date}.xml`,
+        data: await fetchAndProcessXML(`${uri}quic_${date}.xml`, status)
+      }
     };
 
-  });
+  }));
 
-  return Promise.all(data);
+  return toObject(await Promise.all(promises));
 
 }
 
