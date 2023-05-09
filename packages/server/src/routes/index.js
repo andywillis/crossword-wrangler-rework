@@ -1,4 +1,4 @@
-import simple from './simple';
+import crossword from './crossword';
 import root from './root';
 
-export default { simple, root };
+export default { crossword, root };

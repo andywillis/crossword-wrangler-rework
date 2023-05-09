@@ -7,7 +7,8 @@
     "lint": "eslint",
     "dev": "nodemon --experimental-specifier-resolution=node --experimental-json-modules src/index",
     "prod": "node --experimental-specifier-resolution=node --experimental-json-modules src/index",
-    "batch": "node --experimental-specifier-resolution=node --experimental-json-modules src/tools/batchdownload"
+    "batchBundle": "node --experimental-specifier-resolution=node --experimental-json-modules src/tools/batchBundle",
+    "batchDownload": "node --experimental-specifier-resolution=node --experimental-json-modules src/tools/batchDownload"
   },
   "dependencies": {
     "async-throttle": "^1.1.0",

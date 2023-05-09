@@ -5,7 +5,7 @@ import rootname from '../../rootname';
 /**
  * root route
  *
- * @return {function} Root route  
+ * @return {function} Root route
  */
 function root() {
   return function (req, res) {
