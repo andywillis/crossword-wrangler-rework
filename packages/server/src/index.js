@@ -4,7 +4,7 @@ import { app, port, server } from './service/express';
 
 import routes from './routes/index';
 
-app.get('/endpoint', await routes.simple());
+app.get('/crossword/:type/:id', await routes.crossword());
 app.get('*', routes.root());
 
 server.listen(port, () => {
