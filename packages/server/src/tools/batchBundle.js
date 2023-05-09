@@ -1,5 +1,5 @@
 import { writeFile } from 'fs/promises';
-import { bundleUriData } from './process';
+import { bundleUriData } from '../lib/process';
 
 import rootname from '../../rootname';
 
