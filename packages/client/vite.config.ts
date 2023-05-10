@@ -26,7 +26,7 @@ export default defineConfig({
     open: true,
     port: 3000,
     proxy: {
-      '/endpoint': {
+      '/crossword': {
         target: 'http://localhost:4000',
         secure: false,
         changeOrigin: true
