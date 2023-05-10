@@ -1,13 +1,26 @@
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
-import react from '@vitejs/plugin-react';
+import postcssNesting from 'postcss-nesting';
+import preact from '@preact/preset-vite';
 import compress from 'vite-plugin-compression';
 
 export default defineConfig({
   plugins: [
-    react(),
+    preact(),
     splitVendorChunkPlugin(),
     compress()
   ],
+  resolve: {
+    alias: {
+      react: 'preact/compat'
+    }
+  },
+  css: {
+    postcss: {
+      plugins: [
+        postcssNesting
+      ]
+    }
+  },
   root: 'src',
   server: {
     open: true,

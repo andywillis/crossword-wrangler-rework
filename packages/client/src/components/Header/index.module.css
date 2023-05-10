@@ -1,0 +1,43 @@
+@import 'open-props/blue';
+@import 'open-props/gray';
+@import 'open-props/orange';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue-1);
+  height: 10vh;
+  font-size: 1.4em;
+  border-bottom: 1px solid var(--blue-4);
+}
+
+.columnone {
+  padding-left: 1rem;
+  justify-content: flex-end;
+  color: var(--orange-8);
+}
+
+.columntwo {
+  margin-left: auto;
+  padding-right: 1em;
+}
+
+.help {
+  width: 1.3em;
+  aspect-ratio: 1;
+  background-color: var(--blue-1);
+  border: 2px solid var(--blue-4);
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px var(--blue-4);
+  font-size: 1.1em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 8vh;
+  }
+}
