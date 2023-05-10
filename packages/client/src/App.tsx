@@ -1,27 +1,28 @@
 import { Router, Route } from 'preact-router';
 
-import Layout from './layouts';
+import Layout from './layout';
 
-import Calendar from './components/Calendar';
-import Content from './components/Content';
-import Error from './components/Error';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Help from './components/Help';
-import Main from './components/Main';
+import Footer from './layout/Footer';
+import Header from './layout/Header';
+import Main from './layout/Main';
+
+import Calendar from './pages/Calendar';
+import Error from './pages/Error';
+import Help from './pages/Help';
+import Home from './pages/Home';
 
 function App() {
   return (
     <Layout>
       <Header />
-      <Content>
+      <Main>
         <Router>
           <Route path="/calendar" component={Calendar} />
           <Route path="/help" component={Help} />
-          <Route path="/" component={Main} />
+          <Route path="/" component={Home} />
           <Route path="404" component={Error} default />
         </Router>
-      </Content>
+      </Main>
       <Footer />
     </Layout>
   );

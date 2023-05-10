@@ -1,11 +1,15 @@
-import Icon from './Icon';
+import Icon from '../../components/Icon';
 
 import style from './index.module.css';
 
 function Header() {
   return (
     <header class={style.header}>
-      <h1 class={style.title}>Crossword Wrangler</h1>
+      <a href="/" class={style.heading}>
+        <h1 class={style.title}>
+          Crossword Wrangler
+        </h1>
+      </a>
       <nav class={style.icons}>
         <Icon
           hintLabel="calendar-hint"

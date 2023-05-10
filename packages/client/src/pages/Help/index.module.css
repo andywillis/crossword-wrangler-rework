@@ -1,0 +1,6 @@
+.help {
+  & header {
+    margin-bottom: 1em;
+  }
+  /* display: flex; */
+}
