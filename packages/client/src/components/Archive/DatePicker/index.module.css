@@ -1,0 +1,9 @@
+@import "open-props/gray";
+
+.datePicker {
+  font-size: 1.4em;
+  align-self: flex-start;
+  width: auto;
+  padding: 0.25em 1em;
+  border: 2px solid var(--gray-8);
+}

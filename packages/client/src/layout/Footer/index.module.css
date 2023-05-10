@@ -1,0 +1,17 @@
+@import 'open-props/blue';
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  border-top: 1px solid var(--gray-8);
+  background-color: white;
+  height: 8vh;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    height: 6vh;
+  }
+}
