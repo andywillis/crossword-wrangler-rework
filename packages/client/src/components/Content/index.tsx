@@ -1,23 +1,13 @@
-// import DatePicker from '../DatePicker';
-
-// import { currentDate } from '../../store/signals';
-
 import style from './index.module.css';
 
-function Content() {
+interface ContentProps {
+  children: JSX.Element;
+}
 
-  // function handleChange(e: InputEvent) {
-  //   const { name, value } = e.target as HTMLInputElement;
-  //   console.log(name, value);
-  // }
-
+function Content({ children }: ContentProps) {
   return (
     <main class={style.content}>
-      {/* <DatePicker
-        min="2016-05-23"
-        value={currentDate.value}
-        handleChange={handleChange}
-      /> */}
+      {children}
     </main>
   );
 }
