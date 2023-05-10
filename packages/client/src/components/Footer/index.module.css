@@ -5,7 +5,7 @@
   justify-content: flex-end;
   align-items: center;
   padding-right: 1rem;
-  border-top: 1px solid var(--blue-4);
+  border-top: 1px solid var(--blue-5);
   background-color: var(--blue-1);
   height: 8vh;
 }

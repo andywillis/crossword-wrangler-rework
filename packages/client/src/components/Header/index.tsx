@@ -5,9 +5,15 @@ function Header() {
     <header class={style.header}>
       <h1 class={style.columnone}>Crossword Wrangler</h1>
       <div class={style.columntwo}>
-        <button type="button" class={style.help}>
-          ?
+        <button
+          aria-describedby="button-hint"
+          type="button"
+          class={style.help}
+        >?
         </button>
+        <p id="button-hint" aria-hidden="true" hidden>
+          Click the button to go to the help section.
+        </p>
       </div>
     </header>
   );

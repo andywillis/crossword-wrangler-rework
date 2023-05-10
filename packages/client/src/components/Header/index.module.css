@@ -7,37 +7,40 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--blue-1);
-  height: 10vh;
-  font-size: 1.4em;
-  border-bottom: 1px solid var(--blue-4);
+  height: 11vh;
+  font-size: 1.3em;
+  border-bottom: 1px solid var(--blue-5);
 }
 
 .columnone {
   padding-left: 1rem;
+  -webkit-text-stroke: 1px black;
   justify-content: flex-end;
   color: var(--orange-8);
 }
 
 .columntwo {
   margin-left: auto;
-  padding-right: 1em;
+  padding-right: 1rem;
 }
 
 .help {
-  width: 1.3em;
+  width: 1.4em;
   aspect-ratio: 1;
   background-color: var(--blue-1);
-  border: 2px solid var(--blue-4);
+  border: 2px solid var(--orange-8);
   border-radius: 50%;
-  box-shadow: 0px 0px 10px 0px var(--blue-4);
+  box-shadow: 0px 0px 10px 0px var(--orange-8);
   font-size: 1.1em;
   &:hover {
     cursor: pointer;
+    background-color: var(--orange-0);
   }
 }
 
 @media screen and (max-width: 600px) {
   .header {
+    font-size: 1.2em;
     height: 8vh;
   }
 }
