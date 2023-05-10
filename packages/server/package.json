@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "lint": "eslint",
-    "dev": "nodemon --experimental-specifier-resolution=node --experimental-json-modules",
+    "dev": "nodemon --experimental-specifier-resolution=node --experimental-json-modules src/index.js",
     "prod": "node --experimental-specifier-resolution=node --experimental-json-modules src/index",
     "batchBundle": "node --experimental-specifier-resolution=node --experimental-json-modules src/tools/batchBundle",
     "batchDownload": "node --experimental-specifier-resolution=node --experimental-json-modules src/tools/batchDownload"
   },
   "dependencies": {
     "async-throttle": "^1.1.0",
+    "colors": "1.4.0",
     "compression": "^1.7.4",
     "dotenv": "^16.0.3",
     "draftlog": "^1.0.13",
@@ -22,9 +23,7 @@
     "xml2js": "0.5.0"
   },
   "devDependencies": {
-    "@types/node": "20.1.2",
     "babel-plugin-import": "^1.13.6",
-    "colors": "1.4.0",
     "nodemon": "^2.0.22"
   },
   "license": "CC-BY-NC-SA-4.0"
