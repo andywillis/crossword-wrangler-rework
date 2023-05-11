@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import style from './index.module.css';
 
 interface CalendarBallProps {
+  id: string,
   text: string;
   type: string;
   active: boolean;
@@ -26,6 +27,7 @@ const defaultProps: Partial<CalendarBallProps> = {
 function CalendarBall(props: CalendarBallProps) {
 
   const {
+    id,
     text,
     type,
     active,
@@ -42,6 +44,7 @@ function CalendarBall(props: CalendarBallProps) {
     return (
       <div
         class={cn}
+        data-id={id}
         data-type={type}
         data-text={text}
       >{text}
@@ -52,6 +55,7 @@ function CalendarBall(props: CalendarBallProps) {
   return (
     <button
       class={cn}
+      data-id={id}
       data-type={type}
       data-text={text}
       type="button"

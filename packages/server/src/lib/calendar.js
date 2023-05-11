@@ -1,8 +1,24 @@
-export function padNumber(n) {
-  const s = n.toString();
+import { v4 as uuidv4 } from 'uuid';
+
+/**
+ * padNumber
+ *
+ * @export
+ * @param {number} number
+ * @return {string}
+ */
+export function padNumber(number) {
+  const s = number.toString();
   return s.length === 1 ? `0${s}` : s;
 }
 
+/**
+ * getWeekDayCalendar
+ *
+ * @export
+ * @param {number} year
+ * @return {array}
+ */
 export function getWeekDayCalendar(year) {
 
   const arr = [];
@@ -33,4 +49,16 @@ export function getWeekDayCalendar(year) {
 
   return arr;
 
+}
+
+/**
+ * createCalendarBallObject
+ *
+ * @export
+ * @param {string | number} text
+ * @param {string} type
+ * @return {object}
+ */
+export function createCalendarBallObject(input, type) {
+  return { id: uuidv4(), text: `${input}`, type };
 }

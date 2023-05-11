@@ -1,4 +1,12 @@
 .calendarHistory {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  width: 20vw;
+}
+
+@media screen and (max-width: 600px) {
+  .calendarHistory {
+    gap: 5px;
+  }
 }

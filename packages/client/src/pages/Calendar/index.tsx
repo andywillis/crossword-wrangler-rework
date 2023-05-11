@@ -1,7 +1,5 @@
-import { uuidv4 } from 'uuid';
-
 import CalendarBall from '../../components/CalendarBall';
-// import CalendarHistory from '../../components/CalendarHistory';
+import CalendarHistory from '../../components/CalendarHistory';
 import CalendarSelector from '../../components/CalendarSelector';
 
 import { config } from '../../store/config';
@@ -17,35 +15,43 @@ import style from './index.module.css';
 function Calendar() {
 
   function handleClick(e: MouseEvent) {
-    const { dataset: { text, type } } = e.target as HTMLInputElement;
-    const calendarBall = { id: uuidv4(), type, text };
-    calendarHistory.value = [ ...calendarHistory.value, calendarBall ];
+    const { dataset: { id, type } } = e.target as HTMLInputElement;
+    const ball = config.value[type].find(obj => obj.id === id);
+    calendarHistory.value = [ ...calendarHistory.value, ball ];
+  }
+
+  function isActive(id) {
+    return calendarHistory.value.some(ball => ball.id === id);
   }
 
   return (
 
     <section class={style.calendar}>
 
-      {/* <CalendarHistory>
+      <CalendarHistory>
         {calendarHistory.value.map(ball => {
+          const { id, type, text } = ball;
           return (
             <CalendarBall
-              text={ball.text}
-              type={ball.type}
+              key={id}
+              text={text}
+              type={type}
               active
             />
           );
         })}
-      </CalendarHistory> */}
+      </CalendarHistory>
 
       <CalendarSelector>
-        {config.value.years.map(year => {
+        {config.value.year.map(obj => {
+          const { id, type, text } = obj;
           return (
             <CalendarBall
-              key={year}
-              text={year}
-              type="day"
-              active={calendarHistory.value.includes(`${year}`)}
+              key={id}
+              id={id}
+              text={text}
+              type={type}
+              active={isActive(id)}
               handleClick={handleClick}
             />
           );

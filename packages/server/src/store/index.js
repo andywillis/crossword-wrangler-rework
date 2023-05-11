@@ -1,8 +1,25 @@
+import { createCalendarBallObject } from '../lib/calendar';
+
 import reducer from './reducer';
+
+const year = [
+  2016, 2017, 2018, 2019,
+  2020, 2021, 2022, 2023
+];
+
+const month = [
+  'JAN', 'FEB', 'MAR', 'APR',
+  'MAY', 'JUN', 'JUL', 'AUG',
+  'SEP', 'OCT', 'NOV', 'DEC'
+];
+
+const day = Array.from({ length: 31 }, (e, i) => i);
 
 const initialState = {
   config: {
-    years: [ 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 ]
+    year: year.map(el => createCalendarBallObject(el, 'year')),
+    month: month.map(el => createCalendarBallObject(el, 'month')),
+    day: day.map(el => createCalendarBallObject(el, 'day'))
   }
 };
 

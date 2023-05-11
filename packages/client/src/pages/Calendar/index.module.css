@@ -1,3 +1,12 @@
 .calendar {
+  display: flex;
+  justify-content: center;
+  width: 90%;
   padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .calendar {
+    width: 100%;
+  }
 }
