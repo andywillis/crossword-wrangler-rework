@@ -1,0 +1,28 @@
+.clue {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.clue:not(:first-child) {
+  margin-top: 2px;
+}
+
+.number {
+  width: 2em;
+  font-weight: 700;
+}
+
+/* iPad */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+  .number {
+    width: 1.8em;
+    font-weight: 700;
+  }
+  
+}

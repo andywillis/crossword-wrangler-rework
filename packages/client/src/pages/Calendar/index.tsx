@@ -1,5 +1,5 @@
-import Year from '../../components/Years/Year';
 import Years from '../../components/Years';
+import CalendarBall from '../../components/CalendarBall';
 
 import { config, selectedYear } from '../../store/signals';
 
@@ -12,7 +12,7 @@ import style from './index.module.css';
  */
 function Calendar() {
 
-  function handleYear(e: MouseEvent) {
+  function handleClick(e: MouseEvent) {
     const { value } = e.target as HTMLInputElement;
     selectedYear.value = Number(value);
   }
@@ -22,10 +22,11 @@ function Calendar() {
       <Years>
         {config.value.years.map(year => {
           return (
-            <Year
-              year={year}
+            <CalendarBall
+              text={year}
+              type="year"
               active={year === selectedYear.value}
-              handleYear={handleYear}
+              handleClick={handleClick}
             />
           );
         })}
