@@ -24,7 +24,7 @@ function Calendar() {
           return (
             <CalendarBall
               text={year}
-              type="year"
+              type="day"
               active={year === selectedYear.value}
               handleClick={handleClick}
             />

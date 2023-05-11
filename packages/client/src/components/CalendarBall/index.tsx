@@ -32,7 +32,11 @@ function CalendarBall(props: CalendarBallProps) {
     handleClick
   } = props;
 
-  const cn = classnames([ style.calendarBall, active && style.active ]);
+  const cn = classnames({
+    [style.calendarBall]: true,
+    [style[type]]: true,
+    [style.active]: active
+  });
 
   if (!handleClick) {
     return (
