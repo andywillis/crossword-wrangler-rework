@@ -1,6 +1,6 @@
 import style from './index.module.css';
 
-import { crossword } from '../../store/signals';
+import { crossword } from '../../store/crossword';
 
 function Home() {
   return (

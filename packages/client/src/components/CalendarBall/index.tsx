@@ -41,9 +41,9 @@ function CalendarBall(props: CalendarBallProps) {
   if (!handleClick) {
     return (
       <div
+        class={cn}
         data-type={type}
         data-text={text}
-        class={cn}
       >{text}
       </div>
     );
@@ -51,9 +51,9 @@ function CalendarBall(props: CalendarBallProps) {
 
   return (
     <button
+      class={cn}
       data-type={type}
       data-text={text}
-      class={cn}
       type="button"
       onClick={handleClick}
     >{text}

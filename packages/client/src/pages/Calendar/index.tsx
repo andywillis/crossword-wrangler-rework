@@ -1,12 +1,9 @@
 import CalendarBall from '../../components/CalendarBall';
-import CalendarHistory from '../../components/CalendarHistory';
+// import CalendarHistory from '../../components/CalendarHistory';
 import CalendarSelector from '../../components/CalendarSelector';
 
-import {
-  config,
-  selectedYear,
-  calendarHistory
-} from '../../store/signals';
+import { config } from '../../store/config';
+import { calendarHistory } from '../../store/calendar';
 
 import style from './index.module.css';
 
@@ -18,15 +15,15 @@ import style from './index.module.css';
 function Calendar() {
 
   function handleClick(e: MouseEvent) {
-    const { value } = e.target as HTMLInputElement;
-    selectedYear.value = Number(value);
+    const { dataset: { text } } = e.target as HTMLInputElement;
+    calendarHistory.value = [ ...calendarHistory.value, text ];
   }
 
   return (
 
     <section class={style.calendar}>
 
-      <CalendarHistory>
+      {/* <CalendarHistory>
         {calendarHistory.value.map(ball => {
           return (
             <CalendarBall
@@ -36,15 +33,15 @@ function Calendar() {
             />
           );
         })}
-      </CalendarHistory>
+      </CalendarHistory> */}
 
       <CalendarSelector>
         {config.value.years.map(year => {
           return (
             <CalendarBall
               text={year}
-              type="year"
-              active={year === selectedYear.value}
+              type="day"
+              active={calendarHistory.value.includes(`${year}`)}
               handleClick={handleClick}
             />
           );
