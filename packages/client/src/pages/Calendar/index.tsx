@@ -5,6 +5,11 @@ import { config, selectedYear } from '../../store/signals';
 
 import style from './index.module.css';
 
+/**
+ * Calendar
+ *
+ * @return {object} JSX
+ */
 function Calendar() {
 
   function handleYear(e: MouseEvent) {
@@ -27,6 +32,7 @@ function Calendar() {
       </Years>
     </section>
   );
+
 }
 
 export default Calendar;

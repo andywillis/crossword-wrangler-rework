@@ -24,7 +24,6 @@ export function getWeekDayCalendar(year) {
       const dayNumber = date.getDay();
 
       if (dayNumber > 0 && dayNumber < 6) {
-        // console.log(`${year.toString().slice(2)}${padNumber(m)}${padNumber(d)}`);
         arr.push(`${year.toString().slice(2)}${padNumber(m)}${padNumber(d)}`);
       }
 

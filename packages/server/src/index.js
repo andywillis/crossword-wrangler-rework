@@ -12,8 +12,7 @@ const { dispatch } = store;
 dispatch({ type: 'loadData', payload: crosswordData });
 
 app.get('/config', routes.config());
-app.get('/crossword/today', routes.today());
-app.get('/crossword/:type/:id', routes.specific());
+app.get('/crossword/:date/:type', routes.crossword());
 app.get('*', routes.root());
 
 server.listen(port, () => {
