@@ -1,0 +1,4 @@
+.calendarHistory {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,7 +1,12 @@
-import Years from '../../components/Years';
 import CalendarBall from '../../components/CalendarBall';
+import CalendarHistory from '../../components/CalendarHistory';
+import CalendarSelector from '../../components/CalendarSelector';
 
-import { config, selectedYear } from '../../store/signals';
+import {
+  config,
+  selectedYear,
+  calendarHistory
+} from '../../store/signals';
 
 import style from './index.module.css';
 
@@ -18,19 +23,34 @@ function Calendar() {
   }
 
   return (
+
     <section class={style.calendar}>
-      <Years>
+
+      <CalendarHistory>
+        {calendarHistory.value.map(ball => {
+          return (
+            <CalendarBall
+              text={ball.text}
+              type={ball.type}
+              active
+            />
+          );
+        })}
+      </CalendarHistory>
+
+      <CalendarSelector>
         {config.value.years.map(year => {
           return (
             <CalendarBall
               text={year}
-              type="day"
+              type="year"
               active={year === selectedYear.value}
               handleClick={handleClick}
             />
           );
         })}
-      </Years>
+      </CalendarSelector>
+
     </section>
   );
 

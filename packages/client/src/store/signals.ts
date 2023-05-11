@@ -4,12 +4,18 @@ import api from './api';
 
 import { getToday } from '../lib/date';
 
-// ---------------
-
-export const currentDate = signal(getToday());
+// -- Configuration
 
 export const config = signal(await api('/config'));
 
-export const crossword = signal(await api(`/crossword/${currentDate.value}/easy`));
+// --- Calendar
+
+export const calendarHistory = signal([]);
+
+export const currentDate = signal(getToday());
 
 export const selectedYear = signal(0);
+
+// --- Crossword
+
+export const crossword = signal(await api(`/crossword/${currentDate.value}/easy`));
