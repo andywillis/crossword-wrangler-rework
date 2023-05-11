@@ -3,7 +3,7 @@
  *
  * @return {function} Function
  */
-async function today() {
+function today() {
 
   return function (req, res) {
     res.json({ msg: 'Endpoint reached' });

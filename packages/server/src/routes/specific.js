@@ -3,7 +3,7 @@
  *
  * @return {function} Function
  */
-async function specific() {
+function specific() {
 
   return function (req, res) {
     res.json({ msg: 'Endpoint reached' });
