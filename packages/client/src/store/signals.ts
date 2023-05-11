@@ -9,3 +9,5 @@ export const currentDate = signal('');
 export const config = signal(await api('/config'));
 
 export const crossword = signal({});
+
+export const selectedYear = signal(0);
