@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import postcssNesting from 'postcss-nesting';
 import preact from '@preact/preset-vite';
@@ -26,7 +27,12 @@ export default defineConfig({
     open: true,
     port: 3000,
     proxy: {
-      '/endpoint': {
+      '/crossword': {
+        target: 'http://localhost:4000',
+        secure: false,
+        changeOrigin: true
+      },
+      '/config': {
         target: 'http://localhost:4000',
         secure: false,
         changeOrigin: true

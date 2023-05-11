@@ -1,5 +1,15 @@
 import { signal } from '@preact/signals';
 
-export const currentDate = signal('');
+import api from './api';
 
-export const crossword = signal({});
+import { getToday } from '../lib/date';
+
+// ---------------
+
+export const currentDate = signal(getToday());
+
+export const config = signal(await api('/config'));
+
+export const crossword = signal(await api(`/crossword/${currentDate.value}/easy`));
+
+export const selectedYear = signal(0);

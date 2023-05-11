@@ -1,9 +1,11 @@
 import style from './index.module.css';
 
+import { crossword } from '../../store/signals';
+
 function Home() {
   return (
     <section class={style.home}>
-      Home
+      Home {JSON.stringify(crossword.value)}
     </section>
   );
 }

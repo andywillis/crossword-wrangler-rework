@@ -1,8 +1,8 @@
 .main {
   display: flex;
-  padding: 2em 4em;
-  background-color: #efefef;
-  justify-content: flex-start;
+  padding: 2em 2em;
+  width: 100%;
+  justify-content: center;
   /* align-items: center; */
   min-height: calc(100vh - 22vh);
 }

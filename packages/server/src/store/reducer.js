@@ -4,13 +4,10 @@ export default function reducer(state, action) {
 
   switch (type) {
 
-    case 'addData': {
+    case 'loadData': {
       return {
         ...state,
-        [payload.date]: {
-          easy: payload.easy,
-          quick: payload.quick
-        }
+        crosswordData: payload
       };
     }
 

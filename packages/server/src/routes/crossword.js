@@ -1,12 +1,16 @@
+import { getCrosswordData } from '../store/selectors';
+
 /**
  * crossword route
  *
  * @return {function} Function
  */
-async function crossword() {
+function crossword() {
 
-  return async function (req, res) {
-    res.json({ msg: 'Endpoint reached' });
+  return function (req, res) {
+    const { date, type } = req.params;
+    const crosswordData = getCrosswordData(date, type);
+    res.json(crosswordData);
   };
 
 }

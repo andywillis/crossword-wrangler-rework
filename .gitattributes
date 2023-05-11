@@ -1,5 +1,7 @@
 # Set default behaviour, in case users don't have core.autocrlf set.
-* text=auto
+# * text=auto
+
+*.sh -crlf
 
 # Declare files that will always have LF line endings on checkout.
 *.html text eol=lf
@@ -7,6 +9,8 @@
 *.scss text eol=lf
 *.js text eol=lf
 *.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
 *.json text eol=lf
 *.md text eol=lf
 *.yaml text eol=lf
