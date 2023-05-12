@@ -1,5 +1,5 @@
 import CalendarBall from '../../components/CalendarBall';
-import CalendarHistory from '../../components/CalendarHistory';
+import CalendarOptions from '../../components/CalendarOptions';
 import CalendarSelector from '../../components/CalendarSelector';
 
 import { config } from '../../store/config';
@@ -28,21 +28,31 @@ function Calendar() {
 
     <section class={style.calendar}>
 
-      <CalendarHistory>
-        {calendarHistory.value.map(ball => {
-          const { id, type, text } = ball;
-          return (
-            <CalendarBall
-              key={id}
-              text={text}
-              type={type}
-              active
-            />
-          );
-        })}
-      </CalendarHistory>
-
       <CalendarSelector>
+        <CalendarBall
+          id="year"
+          text="Year"
+          type="selector"
+          // active={isActive(id)}
+          handleClick={handleClick}
+        />
+        <CalendarBall
+          id="month"
+          text="Month"
+          type="selector"
+          // active={isActive(id)}
+          handleClick={handleClick}
+        />
+        <CalendarBall
+          id="day"
+          text="Day"
+          type="selector"
+          // active={isActive(id)}
+          handleClick={handleClick}
+        />
+      </CalendarSelector>
+
+      <CalendarOptions>
         {config.value.year.map(obj => {
           const { id, type, text } = obj;
           return (
@@ -56,7 +66,7 @@ function Calendar() {
             />
           );
         })}
-      </CalendarSelector>
+      </CalendarOptions>
 
     </section>
   );

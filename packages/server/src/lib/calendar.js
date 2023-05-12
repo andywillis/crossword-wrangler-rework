@@ -60,5 +60,5 @@ export function getWeekDayCalendar(year) {
  * @return {object}
  */
 export function createCalendarBallObject(input, type) {
-  return { id: uuidv4(), text: `${input}`, type };
+  return { id: uuidv4(), text: `${input}`, type, completed: false };
 }
